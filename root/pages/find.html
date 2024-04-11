@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Pet - PawsHome</title>
+    <link rel="stylesheet" href="/styles/find.css">
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="/pages/home.html" class="logo-link">
+                <img src="/images/logo.png" alt="PawsHome Logo" class="logo">
+                <span class="service-name">PawsHome</span>
+            </a>
+            <div id="datetime" class="datetime"></div>
+        </div>
+        
+    </header>
+
+
+    <nav class="side-menu">
+        <ul>
+            <li><a href="/pages/home.html">Home Page</a></li>
+            <li><a href="/pages/pets.html">Browse Available Pets</a></li>
+            <li><a href="/pages/find.html">Find a Dog/Cat</a></li>
+            <li><a href="/pages/dog_care.html">Dog Care</a></li>
+            <li><a href="/pages/cat_care.html">Cat Care</a></li>
+            <li><a href="/pages/giveaway.html">Have a Pet to Give Away</a></li>
+            <li><a href="/pages/contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+
+    <main>
+        <section class="find-pet-form-section">
+            <h1>Find Your Perfect Pet</h1>
+            <form id="find-pet-form">
+                <label for="pet-type">Cat or Dog:</label>
+                <select id="pet-type" name="pet_type">
+                    <option value="">Choose one</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select>
+
+                <label for="breed">Breed:</label>
+                <select id="breed" name="breed">
+                    <option value="">Choose one</option>
+                    <!-- Dog breeds -->
+                    <option value="labrador">Labrador Retriever</option>
+                    <option value="german_shepherd">German Shepherd</option>
+                    <option value="golden_retriever">Golden Retriever</option>
+                    <option value="french_bulldog">French Bulldog</option>
+                    <option value="beagle">Beagle</option>
+                    <!-- Cat breeds -->
+                    <option value="siamese">Siamese</option>
+                    <option value="persian">Persian</option>
+                    <option value="maine_coon">Maine Coon</option>
+                    <option value="ragdoll">Ragdoll</option>
+                    <option value="sphynx">Sphynx</option>
+                </select>
+
+                <label for="age">Preferred Age:</label>
+                <select id="age" name="age">
+                    <option value="">Choose one</option>
+                    <option value="puppy_kitten">Puppy/Kitten</option>
+                    <option value="young">Young</option>
+                    <option value="adult">Adult</option>
+                    <option value="senior">Senior</option>
+                </select>
+
+                <label for="gender">Preferred Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="">Choose one</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <fieldset>
+                    <legend>Compatibility</legend>
+                    <label><input type="checkbox" name="compatibility" value="other_dogs"> Gets along with other dogs</label>
+                    <label><input type="checkbox" name="compatibility" value="other_cats"> Gets along with other cats</label>
+                    <label><input type="checkbox" name="compatibility" value="children"> Good with children</label>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button class = "form-button" type="submit">Submit</button>
+                    <button class = "form-button" type="reset">Clear</button>
+                </div>
+            </form>
+
+            <div id="error-message" style="color: red; display: none;">
+                Please fill in all fields.
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>This site is dedicated to helping you find your new best friend. Your privacy is important to us, and we promise not to sell or misuse your information.</p>
+        <p><a href="/pages/privacy.html">Privacy/Disclaimer Statement</a></p>
+    </footer>
+
+    <script src="/scripts/homePage.js"></script>
+    <script src="/scripts/find.js"></script>
+</body>
+</html>

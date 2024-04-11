@@ -1,0 +1,62 @@
+.pet-listing {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: #f9f9f9;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-sizing: border-box; 
+}
+
+.pet-image {
+    width: 150px; 
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 4px; 
+    object-fit: cover;
+}
+
+.pet-details {
+    flex: 1; 
+    padding: 0 15px; 
+}
+
+.pet-details h2 {
+    margin-bottom: 10px;
+}
+
+.pet-details p {
+    margin-bottom: 5px;
+}
+
+.interest-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.interest-button:hover {
+    background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+    .pet-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+    }
+    .pet-listing {
+        flex-direction: row; 
+        align-items: flex-start;
+        width: calc(50% - 20px); 
+        max-width: 600px; 
+    }
+}
+

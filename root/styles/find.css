@@ -1,0 +1,58 @@
+.find-pet-form-section {
+    padding: 20px;
+    margin: 20px;
+}
+
+.find-pet-form-section h1 {
+    margin-bottom: 20px;
+}
+
+#find-pet-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+#find-pet-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#find-pet-form select {
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+#find-pet-form fieldset {
+    grid-column: 1 / -1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#find-pet-form .form-actions {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+#find-pet-form .form-actions button {
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+.form-button {
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+    margin-top: 10px;
+    font-size: 16px; 
+}
+
+.form-button:hover {
+    background-color: #0056b3; 
+}

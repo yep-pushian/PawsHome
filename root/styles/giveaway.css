@@ -1,0 +1,50 @@
+.giveaway-form-section {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.giveaway-form-section form > div,
+.giveaway-form-section form fieldset {
+    margin-bottom: 20px;
+}
+
+.giveaway-form-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.giveaway-form-section input[type=text],
+.giveaway-form-section input[type=email],
+.giveaway-form-section select,
+.giveaway-form-section textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.giveaway-form-section .form-actions {
+    text-align: center;
+}
+
+.giveaway-form-section .form-actions button {
+    padding: 10px 15px;
+    margin-right: 10px;
+}
+
+.giveaway-button {
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+    margin-top: 10px;
+    font-size: 16px; 
+}
+
+.giveaway-button:hover {
+    background-color: #0056b3; 
+}

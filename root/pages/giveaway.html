@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give Up a Pet for Adoption - PawsHome</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/giveaway.css">
+</head>
+<body>
+    
+    <header>
+        <div class="header-container">
+            <a href="/pages/home.html" class="logo-link">
+                <img src="/images/logo.png" alt="PawsHome Logo" class="logo">
+                <span class="service-name">PawsHome</span>
+            </a>
+            <div id="datetime" class="datetime"></div>
+        </div>
+        
+    </header>
+
+
+    <nav class="side-menu">
+        <ul>
+            <li><a href="/pages/home.html">Home Page</a></li>
+            <li><a href="/pages/pets.html">Browse Available Pets</a></li>
+            <li><a href="/pages/find.html">Find a Dog/Cat</a></li>
+            <li><a href="/pages/dog_care.html">Dog Care</a></li>
+            <li><a href="/pages/cat_care.html">Cat Care</a></li>
+            <li><a href="/pages/giveaway.html">Have a Pet to Give Away</a></li>
+            <li><a href="/pages/contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="giveaway-form-section">
+            <h1>Give Up a Pet for Adoption</h1>
+            <form id="giveaway-form">
+                <label for="pet-type">Cat or Dog:</label>
+                <select id="pet-type" name="pet_type">
+                    <option value="">Choose one</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select>
+    
+                <label for="breed">Breed (include if mix):</label>
+                <input type="text" id="breed" name="breed" placeholder="e.g., Labrador or Mix Breed">
+    
+                <label for="age">Age of Animal:</label>
+                <select id="age" name="age">
+                    <option value="">Choose one</option>
+                    <option value="puppy_kitten">Puppy/Kitten</option>
+                    <option value="young">Young</option>
+                    <option value="adult">Adult</option>
+                    <option value="senior">Senior</option>
+                </select>
+    
+                <label for="gender">Animal Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="">Choose one</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+    
+                <div>
+                    <label><input type="checkbox" name="gets_along_dogs"> Gets along with other dogs</label>
+                </div>
+                <div>
+                    <label><input type="checkbox" name="gets_along_cats"> Gets along with other cats</label>
+                </div>
+                <div>
+                    <label><input type="checkbox" name="suitable_for_children"> Suitable for a family with small children</label>
+                </div>
+    
+                <label for="comments">Comments about the animal:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Brag about the animal..." ></textarea>
+    
+                <fieldset>
+                    <legend>Current Owner's Information</legend>
+    
+                    <label for="owner-family-name">Family Name:</label>
+                    <input type="text" id="owner-family-name" name="owner_family_name">
+    
+                    <label for="owner-given-name">Given Name:</label>
+                    <input type="text" id="owner-given-name" name="owner_given_name">
+    
+                    <label for="owner-email">Email:</label>
+                    <input type="email" id="owner-email" name="owner_email">
+                </fieldset>
+    
+                <div class="form-actions">
+                    <button type="submit" class="giveaway-button">Submit</button>
+                    <button type="reset" class="giveaway-button">Clear</button>
+                </div>
+            </form>
+            <div id="error-message" style="color: red; display: none;">
+                Please fill in all fields.
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>This site is dedicated to helping you find your new best friend. Your privacy is important to us, and we promise not to sell or misuse your information.</p>
+        <p><a href="/pages/privacy.html">Privacy/Disclaimer Statement</a></p>
+    </footer>
+    <script src="/scripts/homePage.js"></script>
+    <script src="/scripts/giveaway.js"></script>
+</body>
+</html>

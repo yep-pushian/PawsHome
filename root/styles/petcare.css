@@ -1,0 +1,42 @@
+.care-tips {
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.care-tips h1 {
+    color: #333; 
+    margin-bottom: 15px; 
+}
+
+.care-tips ul {
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.care-tips ul li {
+    padding-left: 30px; 
+    margin-bottom: 10px; 
+    background-size: 20px; 
+    line-height: 1.6; 
+}
+
+.care-tips ul li strong {
+    color: #007bff; 
+}
+
+.care-tips p, .care-tips ul li {
+    font-size: 16px; 
+}
+
+.care-tips a {
+    color: #007bff; 
+    text-decoration: none; 
+}
+
+.care-tips a:hover {
+    text-decoration: underline; 
+}
+
