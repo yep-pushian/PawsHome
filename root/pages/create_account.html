@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - PawsHome</title>
+    <title>Create Account - PawsHome</title>
     <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/createAccount.css">
 </head>
@@ -24,7 +24,6 @@
     <nav class="side-menu">
         <ul>
             <li><a href="/pages/home.html">Home Page</a></li>
-            <li><a href="/pages/pets.html">Browse Available Pets</a></li>
             <li><a href="/pages/find.html">Find a Dog/Cat</a></li>
             <li><a href="/pages/dog_care.html">Dog Care</a></li>
             <li><a href="/pages/cat_care.html">Cat Care</a></li>
@@ -36,14 +35,15 @@
 
     <main>
         <form id="create-account-form" action="/create-account" method="POST">
-            <h2>Create Your PawsHome Account</h2><br>
+            <h2>Create Your PawsHome Account</h2>
+            <img src="/images/profile.png" alt="Profile Logo" class="profileLogo"> 
             <label for="username">Username:</label>
             <input type="text" id="username" name="username">
             <small>Usernames can contain letters and digits only.</small>
         
             <label for="password">Password:</label>
             <input type="password" id="password" name="password">
-            <small>Passwords must be at least 4 characters long, with at least one letter and one digit.</small>
+            <small>Passwords must be at least 4 characters long, with at least one letter and one digit.</small><br>
         
             <button type="submit">Create Account</button>
         </form>
