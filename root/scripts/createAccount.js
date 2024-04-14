@@ -28,7 +28,7 @@ document.getElementById('create-account-form').onsubmit = function(event) {
         })
         .catch(err => {
             console.error('Request failed', err);
-            document.getElementById('account-message').textContent = 'An error occurred while creating the account.';
+            document.getElementById('account-message').textContent = 'An error occurred';
         });
     }
 };

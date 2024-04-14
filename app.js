@@ -5,11 +5,25 @@ const port = process.env.PORT || 3000;
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const loginFilePath = path.join(__dirname, 'data', 'login.txt');
+const petsFilePath = path.join(__dirname, 'data', 'pets.txt');
+const session = require('express-session');
 
 app.use(express.static(path.join(__dirname, 'root')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(session({
+    secret: 'key', 
+    resave: false,
+    saveUninitialized: false, 
+    cookie: {
+        httpOnly: true, 
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 24 * 60 * 60 * 1000 
+    }
+
+}));
 
 
 app.get('/', (req, res) => {
@@ -31,10 +45,19 @@ app.get('/dog-care', (req, res) => {
 app.get('/find', (req, res) => {
     res.sendFile(path.join(__dirname, 'root', 'pages', 'find.html'));
 });
+
+app.get('/check-login', (req, res) => {
+    res.json({ isLoggedIn: req.session.isLoggedIn || false });
+});
   
 app.get('/giveaway', (req, res) => {
-    res.sendFile(path.join(__dirname, 'root', 'pages', 'giveaway.html'));
+    if (req.session.isLoggedIn) {
+        res.sendFile(path.join(__dirname, 'root', 'pages', 'giveaway.html'));
+    } else {
+        res.sendFile(path.join(__dirname, 'root', 'pages', 'login.html'));
+    }
 });
+
   
 app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'root', 'pages', 'home.html'));
@@ -179,6 +202,104 @@ app.post('/find-pets', (req, res) => {
     res.json(filteredPets);
 });
 
+
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+
+    fs.readFile(loginFilePath, 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).send('Error reading login file');
+            return;
+        }
+
+        const credentials = data.split('\n');
+        const userRecord = credentials.find(record => {
+            const [recordUsername, recordPassword] = record.split(':');
+            return recordUsername === username && recordPassword === password;
+        });
+
+        if (userRecord) {
+            req.session.isLoggedIn = true; 
+            req.session.username = username;
+            res.json({ success: true, message: 'Login successful' });
+        } else {
+            res.json({ success: false, message: 'Login failed' });
+        }
+    });
+});
+
+
+app.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.json({ success: false, message: 'Logout failed, please try again' });
+        }
+        res.clearCookie('connect.sid');
+        res.json({ success: true, message: 'You have been logged out' });
+    });
+});
+
+const getNextId = (callback) => {
+    fs.readFile(petsFilePath, 'utf8', (err, data) => {
+        if (err) {
+            console.log(err);
+            callback(err, null);
+            return;
+        }
+        const lines = data.trim().split('\n');
+        const lastLine = lines[lines.length - 1];
+        const lastId = lastLine ? parseInt(lastLine.split(':')[0]) : 0;
+        callback(null, lastId + 1);
+    });
+};
+
+
+app.post('/submit-pet', (req, res) => {
+    if (!req.session.isLoggedIn) {
+        res.status(403).send('You must be logged in to submit a pet.');
+        return;
+    }
+
+    getNextId((err, nextId) => {
+        if (err) {
+            res.status(500).send('Could not submit pet. Please try again.');
+            return;
+        }
+
+        const petData = [
+            nextId,
+            req.session.username, 
+            req.body.pet_type,
+            req.body.breed,
+            req.body.age,
+            req.body.gender,
+            req.body.gets_along_dogs ? "Yes" : "No",
+            req.body.gets_along_cats ? "Yes" : "No",
+            req.body.suitable_for_children ? "Yes" : "No",
+            req.body.comments.replace(/(\r\n|\n|\r)/gm, " "),
+            req.body.owner_family_name,
+            req.body.owner_given_name,
+            req.body.owner_email
+        ].join(':') + '\n';
+
+        fs.appendFile(petsFilePath, petData, (err) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send('Could not submit pet. Please try again.');
+                return;
+            }
+            res.send('Pet submitted successfully.');
+        });
+    });
+});
+
+app.get('/get-username', (req, res) => {
+    if (req.session.isLoggedIn) {
+        res.json({ username: req.session.username });
+    } else {
+        res.status(403).send('Not logged in');
+    }
+});
 
 
 app.listen(port, () => {
