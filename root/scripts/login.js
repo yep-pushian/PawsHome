@@ -18,7 +18,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     .then(response => response.json())
     .then(data => {
         if(data.success) {
-            window.location.href = '/pages/giveaway.html';
+            window.location.href = '/pages/home.html';
         } else {
             loginMessage.textContent = data.message || 'Login failed. Please try again.';
             loginMessage.style.display = 'block';
