@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 console.error('Error:', error);
-                document.getElementById('error-message').textContent = 'Failed to submit the pet. Please log in before attempting to submit a pet.';
+                document.getElementById('error-message').innerHTML = 'Failed to submit the pet. Please <a href="/pages/login.html">sign in</a> before attempting to submit a pet.';
                 document.getElementById('error-message').style.display = 'block';
             });
         }
