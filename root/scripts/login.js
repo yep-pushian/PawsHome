@@ -5,7 +5,6 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const password = document.getElementById('password').value;
     const loginMessage = document.getElementById('login-message');
 
-    // Clear any existing messages when attempting to login again
     loginMessage.textContent = '';
     loginMessage.style.display = 'none';
 

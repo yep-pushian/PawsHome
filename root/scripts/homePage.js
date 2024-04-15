@@ -6,8 +6,6 @@ function updateDateTime() {
 
 setInterval(updateDateTime, 1000);
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
     updateDateTime();
 
