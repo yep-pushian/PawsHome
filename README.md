@@ -28,3 +28,19 @@ Once the installation is complete, you can start the application by running:
 
 You can then access the app by navigating to http://localhost:3000 in your web browser.
 
+
+## Additional Notes
+
+### Testing 'Find a Cat/Dog' Feature
+
+If you would like to test the 'Find a cat/dog' feature that matches the criteria of one of the pets that was already created in Assignment 2, you can navigate to the respective version of the app.
+
+### Deployed Version
+Access the deployed feature using the following link:
+[Find a Cat/Dog - Deployed](https://pawshome.onrender.com/pages/pets.html)
+
+### Local Version
+To test it locally, use the link below after starting your local server:
+[Find a Cat/Dog - Local](http://localhost:3000/pages/pets.html)
+
+Once you are on the 'Find a cat/dog' page, pick any pets' information and then fill out the form to test the feature.
