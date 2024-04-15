@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   
 app.get('/cat-care', (req, res) => {
     res.sendFile(path.join(__dirname, 'root', 'pages', 'cat_care.html'));
-  });
+});
   
 app.get('/contact-us', (req, res) => {
     res.sendFile(path.join(__dirname, 'root', 'pages', 'contactus.html'));

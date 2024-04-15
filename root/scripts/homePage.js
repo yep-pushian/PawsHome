@@ -10,18 +10,20 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDateTime();
 
     fetch('/check-login')
-        .then(response => response.json())
-        .then(data => {
-            const logoutButton = document.getElementById('logout-button');
+    .then(response => response.json())
+    .then(data => {
+        const logoutButton = document.getElementById('logout-button');
+        if (logoutButton) { // Add this check here
             if (data.isLoggedIn) {
                 logoutButton.style.display = 'inline-block';
             } else {
                 logoutButton.style.display = 'none'; 
             }
-        })
-        .catch(error => {
-            console.error('Error checking login status:', error);
-        });
+        }
+    })
+    .catch(error => {
+        console.error('Error checking login status:', error);
+    });
 
     const giveAwayLink = document.getElementById('giveaway-link');
     if (giveAwayLink) {
