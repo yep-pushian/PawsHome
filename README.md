@@ -4,7 +4,11 @@ Welcome to the SOEN287 project repository. This application provides a user-frie
 
 ## Accessing the Deployed Application
 
-The application is deployed and available online for easy access. Visit the live website hosted on Render: [Paw's Home](https://pawshome.onrender.com).
+The application is deployed and available online for easy access. Please give it a few moments to load.
+
+
+Visit the live website hosted on Render:
+[Paw's Home](https://pawshome.onrender.com).
 
 
 ## Running Locally
