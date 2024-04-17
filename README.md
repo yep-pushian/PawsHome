@@ -28,7 +28,8 @@ Ensure you have Node.js and npm installed on your computer.
 ### Starting the Application
 
 Once the installation is complete, you can start the application by running:
-* npm start 
+* npm start
+* make sure you're in cd Project287
 
 You can then access the app by navigating to http://localhost:3000 in your web browser.
 
